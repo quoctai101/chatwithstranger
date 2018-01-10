@@ -35,9 +35,9 @@ Ngoài tính năng nói chuyện ẩn danh mà hầu hết các chatbot cơ bả
 
 ### Hướng dẫn cài đặt
 
-  Các bạn hãy xem hướng dẫn kèm ảnh chi tiết tại đây (dùng host Heroku): [click here](https://raw.githubusercontent.com/ngxson/chatbot-cnh/master/readme/1-TUT-CHATBOT-CNH.pdf)
+  Các bạn hãy xem hướng dẫn kèm ảnh chi tiết tại đây (dùng host Heroku): [click here](https://raw.githubusercontent.com/quoctai101/chatwithstranger/master/readme/1-TUT-CHATBOT-CNH.pdf)
 
-  Đối với các bạn dùng C9 hay host riêng: [click here](https://github.com/ngxson/chatbot-cnh/blob/master/readme/TUT_NON_HEROKU.md)
+  Đối với các bạn dùng C9 hay host riêng: [click here](https://raw.githubusercontent.com/quoctai101/chatwithstranger/master/readme/TUT_NON_HEROKU.md)
 
   (Bạn nên in hướng dẫn này ra cho dễ nhìn, chỉ có 16 trang thôi mà :smiley: )
 
