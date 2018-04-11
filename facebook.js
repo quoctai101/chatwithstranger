@@ -67,8 +67,12 @@ exports.setupFBApi = function(request, token, report_link) {
 exports.quickbtns = [
   {
     "content_type":"text",
-    "title":"tim khac",
-    "payload":la.KEYWORD_GENDER+'khac'
+    "title":"tim nam",
+    "payload":la.KEYWORD_GENDER+'nam'
+  },{
+    "content_type":"text",
+    "title":"tim nu",
+    "payload":la.KEYWORD_GENDER+'nu'
   },{
     "content_type":"text",
     "title":"meow",

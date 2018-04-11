@@ -114,9 +114,16 @@ app.post('/webhook/', function (req, res) {
 							    findPair(sender, genderid, 0);
 							}, facebook, token);
 						} else if (command.startsWith(la.KEYWORD_GENDER)) {
+							if (command == la.KEYWORD_GENDER+'nam'){
+								gendertool.getGender(sqlconn, sender, function(genderid) {
+							    findPair(sender, genderid, 2);
+							}, facebook, token);
+							}
+							else {
 							gendertool.getGender(sqlconn, sender, function(genderid) {
 							    findPair(sender, genderid, 1);
 							}, facebook, token);
+							}
 						} else if (command === la.KEYWORD_HELP) {
 							sendButtonMsg(sender, la.HELP_TXT, true, false);
 						} else if (command === la.KEYWORD_CAT) {
@@ -254,6 +261,7 @@ function findPair(id, mygender, isPreferedGender) {
 					else connect2People(id, target, true);
 				}
 				*/
+				/*
 				if (target_prefer == 0){
 					if (isPreferedGender == 0) connect2People(id, target, false);
 					else {
@@ -264,6 +272,40 @@ function findPair(id, mygender, isPreferedGender) {
 				else {
 					if (mygender == target_gender) processWaitRoom(i+1);
 					else connect2People(id, target, true);
+				}
+				*/
+				if (isPreferedGender == 0){
+					if(target_prefer==0) connect2People(id, target, true);
+					else if(target_prefer == 1) {
+						if(mygender==1) connect2People(id, target, true);
+						else processWaitRoom(i+1);
+						}
+					else if(mygender == 2) connect2People(id, target, true);
+					else processWaitRoom(i+1);
+				}
+				else if(isPreferedGender == 1){
+					if(target_gender == 1){
+						if(target_prefer==0) connect2People(id, target, true);
+						else if(target_prefer == 1) {
+							if(mygender==1) connect2People(id, target, true);
+							else processWaitRoom(i+1);
+						}
+						else if(mygender == 2) connect2People(id, target, true);
+						else processWaitRoom(i+1);
+					}
+					else processWaitRoom(i+1);
+				}
+				else{
+					if(target_gender == 2){
+						if(target_prefer==0) connect2People(id, target, true);
+						else if(target_prefer == 1) {
+							if(mygender==1) connect2People(id, target, true);
+							else processWaitRoom(i+1);
+						}
+						else if(mygender == 2) connect2People(id, target, true);
+						else processWaitRoom(i+1);
+					}
+					else processWaitRoom(i+1);
 				}
 			//}
 		}
